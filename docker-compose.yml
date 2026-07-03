@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+
+  app:
+    build: .
+    container_name: ai-native-lab
+
+  postgres:
+    image: postgres:16
+    container_name: postgres-db
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ai_lab
+
+    ports:
+      - "5432:5432"
